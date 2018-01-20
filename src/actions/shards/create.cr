@@ -1,8 +1,8 @@
 class Shards::Create < BrowserAction
   action do
-    ShardForm.new(params).submit do |form, repo_name|
-      if repo_name
-        render_text "Tried to add #{repo_name}"
+    ShardForm.create(params) do |form, shard|
+      if shard
+        redirect to: Show.with(id: shard.id)
       else
         render NewPage, shard_form: form
       end

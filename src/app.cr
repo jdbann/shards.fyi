@@ -14,4 +14,6 @@ require "./handlers/**"
 require "../config/env"
 require "../config/**"
 
+require "./clients/**"
+
 Habitat.raise_if_missing_settings!
