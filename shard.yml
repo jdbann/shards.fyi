@@ -1,12 +1,12 @@
-name: crystal-toolbox
+name: crystal_toolbox
 version: 0.1.0
 
 authors:
   - John Bannister <jdbann@gmail.com>
 
 targets:
-  crystal-toolbox:
-    main: src/crystal-toolbox.cr
+  crystal_toolbox:
+    main: src/crystal_toolbox.cr
 
 crystal: 0.24.1
 
