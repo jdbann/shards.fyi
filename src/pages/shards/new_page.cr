@@ -10,6 +10,7 @@ class Shards::NewPage < MainLayout
   private def render(f : ShardForm)
     form_for Create do
       text_input f.repo_name
+      errors_for f.repo_name
 
       submit "Add"
     end

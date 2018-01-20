@@ -14,4 +14,8 @@ class Github::Repo
   def self.get(repo_name : String)
     Client.get_repo(repo_name)
   end
+
+  def contents(path : String)
+    Client.get_contents(full_name, path)
+  end
 end
