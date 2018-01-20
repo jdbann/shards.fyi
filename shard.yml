@@ -19,3 +19,6 @@ dependencies:
   lucky_migrator:
     github: luckyframework/lucky_migrator
     version: "~> 0.4.0"
+  crest:
+    github: mamantoha/crest
+    version: "~> 0.9.6"
