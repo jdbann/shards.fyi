@@ -23,8 +23,10 @@ abstract class MainLayout
       end
 
       body do
-        render_flash
-        inner
+        div class: "wrapper" do
+          render_flash
+          inner
+        end
       end
     end
   end
