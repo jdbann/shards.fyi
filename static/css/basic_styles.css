@@ -196,7 +196,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "frac", "pnum";
   font-feature-settings: "kern", "liga", "frac", "pnum";
   -webkit-font-smoothing: antialiased;
-  background-color: #fff;
+  background-color: $color-background;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 1em;
@@ -218,12 +218,12 @@ a {
   -webkit-transition: color 0.1s linear;
   -moz-transition: color 0.1s linear;
   transition: color 0.1s linear;
-  color: #477DCA;
+  color: $color-primary;
   text-decoration: none
 }
 
 a:hover {
-  color: #2c5999
+  color: $color-primary-active
 }
 
 a:active, a:focus {
@@ -307,7 +307,7 @@ input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus,
 input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus,
 input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
 select[multiple=multiple]:focus {
-  border-color: #477DCA;
+  border-color: $color-primary;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px #3770c0;
   outline: none
 }
@@ -405,10 +405,10 @@ input[type="button"], input[type="reset"], input[type="submit"] {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  background-color: #477DCA;
+  background-color: $color-primary;
   border-radius: 3px;
   border: none;
-  color: #fff;
+  color: $color-white;
   cursor: pointer;
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
@@ -424,32 +424,13 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 
 input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover,
 input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
-  background-color: #2c5999;
-  color: #fff
+  background-color: $color-primary-active;
+  color: $color-white
 }
 
 input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
   cursor: not-allowed;
   opacity: 0.5
-}
-
-.wrapper {
-  max-width: 78.75em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2em
-}
-
-.wrapper:after {
-  content: "";
-  display: table;
-  clear: both
-}
-
-@media screen and (min-width: 82.75em) {
-  .wrapper {
-      padding: 2em 0
-  }
 }
 
 @font-face {
@@ -550,7 +531,7 @@ nav.bourbon li {
 nav.bourbon a {
   background-position: 1em center;
   background-repeat: no-repeat;
-  color: #fff;
+  color: $color-white;
   display: inline-block;
   font-weight: bold;
   padding: 1em 1em 1em 3em
@@ -571,7 +552,7 @@ nav.bourbon a {
 
 nav.bourbon a:hover {
   background-color: #434548;
-  color: #fff
+  color: $color-white
 }
 
 nav.bourbon a.current {
@@ -758,7 +739,7 @@ nav.bourbon h1 a:hover {
 
 .hero {
   background-color: #aab971;
-  color: #fff;
+  color: $color-white;
   padding: 3.5em 0
 }
 
@@ -769,7 +750,7 @@ nav.bourbon h1 a:hover {
 }
 
 .hero a {
-  color: #fff;
+  color: $color-white;
   border-bottom: 3px solid rgba(255, 255, 255, 0.6)
 }
 
@@ -785,7 +766,7 @@ nav.bourbon h1 a:hover {
 
 @media screen and (min-width: 38.75em) {
   .hero h1:after {
-      background-color: #fff;
+      background-color: $color-background;
       background-image: url("/images/bitters-example.jpg");
       background-position: center 1em;
       background-repeat: no-repeat;
@@ -839,7 +820,7 @@ nav.bourbon h1 a:hover {
 }
 
 .about p a:hover {
-  color: #fff7e9
+  color: $color-white7e9
 }
 
 .about article {
@@ -984,7 +965,7 @@ nav.bourbon h1 a:hover {
 }
 
 .instructions h1 {
-  color: #fff;
+  color: $color-white;
   margin-bottom: 1em;
   margin-top: 0;
   font-size: 2.25em
@@ -1015,8 +996,8 @@ nav.bourbon h1 a:hover {
 }
 
 .instructions a:hover {
-  border-color: #fff;
-  color: #fff
+  border-color: $color-white;
+  color: $color-white
 }
 
 header.main {

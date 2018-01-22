@@ -23,6 +23,11 @@ abstract class MainLayout
       end
 
       body do
+        header class: "header" do
+          div class: "wrapper" do
+            link "Crystal Toolbox", to: Shards::Index, class: "header-brand"
+          end
+        end
         div class: "wrapper" do
           render_flash
           inner
