@@ -1,12 +1,19 @@
-# crystal-toolbox
+# Crystal Toolbox
 
-This is a project written using [Lucky](https://luckyframework.org). Enjoy!
+An organized catalog of Crystal Shards written with [Lucky](https://luckyframework.org).
 
 ### Setting up the project
 
 1. [Install required dependencies](http://luckyframework.org/guides/installing.html#install-required-dependencies)
-1. Run `bin/setup`
-1. Run `lucky dev` to start the app
+* Run `bin/setup`
+* Run `lucky dev` to start the app
+* Get an API Client ID and Client Secret from [these instructions](https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization) or generate them directly [here](https://github.com/settings/developers).
+* Make a `.env` at the root of your project containing the keys:
+
+```
+GITHUB_CLIENT_ID=••••••••••
+GITHUB_CLIENT_SECRET=••••••••••
+```
 
 ### Learning Lucky
 
