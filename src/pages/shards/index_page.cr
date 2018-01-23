@@ -1,26 +1,30 @@
 class Shards::IndexPage < MainLayout
+  include Shards::ShardComponent
+
   needs shards : ShardQuery
   needs shard_form : ShardForm
 
   def inner
-    h1 "Crystal Toolbox"
+    div class: "shard-intro" do
+      h1 "Crystal Toolbox"
 
-    render @shard_form
+      para "A (soon-to-be) categorised collection of Crystal shards, sorted by
+        interest on GitHub."
+      para "Still growing so please submit a shard you're using below."
 
-    h2 "Shards"
+      render @shard_form
+    end
 
-    ul do
-      @shards.each do |shard|
-        li do
-          link shard.full_name, to: Show.with(id: shard.id)
-        end
-      end
+    h2 "All Shards"
+
+    @shards.each do |shard|
+      render(shard)
     end
   end
 
   private def render(f : ShardForm)
     form_for Create do
-      text_input f.repo_name
+      text_input f.repo_name, placeholder: "user/repo_name"
 
       submit "Add"
     end
