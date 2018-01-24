@@ -1,6 +1,4 @@
 class ShardForm < Shard::BaseForm
-  REPO_NAME_FORMAT = /(?:github.com\/)?(?<repo_name>[a-zA-Z\-\_]+\/[a-zA-Z\-\_]+)/
-
   allow_virtual repo_name : String
 
   def prepare
@@ -29,11 +27,15 @@ class ShardForm < Shard::BaseForm
   end
 
   private def validate_format_of_repo_name
-    valid_repo_name = REPO_NAME_FORMAT.match(repo_name.value.to_s).try &.["repo_name"]
-    if valid_repo_name
-      repo_name.value = valid_repo_name.downcase
-    else
-      repo_name.add_error "not a valid GitHub repo name"
+    repo_name.value.try do |value|
+      uri = URI.parse(value)
+
+      if uri.host && !(uri.host =~ /github.com/)
+        repo_name.add_error "not a GitHub repo"
+      else
+        path = uri.host ? uri.path.to_s : value
+        repo_name.value = path.split("/", remove_empty: true).first(2).join("/")
+      end
     end
   end
 
@@ -46,7 +48,7 @@ class ShardForm < Shard::BaseForm
   end
 
   private def validate_uniqueness_of_repo
-    if ShardQuery.new.full_name(repo_name.value).size > 0
+    if ShardQuery.new.full_name.lower.is(repo_name.value.to_s.downcase).size > 0
       repo_name.add_error "already listed"
     end
   end
