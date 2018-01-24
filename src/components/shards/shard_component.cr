@@ -2,6 +2,7 @@ module Shards::ShardComponent
   def render(shard : Shard)
     div class: "shard-details" do
       h3 do
+        span shard.popularity, class: "shard-popularity"
         link shard.full_name, to: Show.with(id: shard.id)
       end
       div class: "shard-details-columns" do

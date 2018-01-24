@@ -10,4 +10,8 @@ class Shard < BaseModel
     field watchers_count : Int32
     field repo_created_at : Time
   end
+
+  def popularity
+    forks_count + stargazers_count + subscribers_count + watchers_count
+  end
 end
