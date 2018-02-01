@@ -1,4 +1,5 @@
 class ShardForm < Shard::BaseForm
+  allow category_id
   allow_virtual repo_name : String
 
   def prepare

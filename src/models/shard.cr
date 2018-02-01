@@ -9,6 +9,7 @@ class Shard < BaseModel
     field subscribers_count : Int32
     field watchers_count : Int32
     field repo_created_at : Time
+    belongs_to category : Category?
   end
 
   def popularity
