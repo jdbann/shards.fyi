@@ -6,7 +6,7 @@ class CategoryForm < Category::BaseForm
   end
 
   def validate_uniqueness_of_title
-    if CategoryQuery.new.title.lower.is(title.value.to_s.downcase).size > 0
+    if CategoryQuery.new.title.lower.is(title.value.to_s.downcase).any?
       title.add_error "already exists"
     end
   end
