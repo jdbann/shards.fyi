@@ -12,7 +12,7 @@ module Shards::ShardCreationForm
   end
 
   private def categories_for_select
-    CategoryQuery.new.map do |category|
+    CategoryQuery.new.title.asc_order.map do |category|
       {category.title, category.id}
     end
   end
