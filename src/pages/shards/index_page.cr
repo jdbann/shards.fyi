@@ -22,8 +22,4 @@ class Shards::IndexPage < MainLayout
       render(shard)
     end
   end
-
-  private def render(f : ShardForm)
-    render_shard_form(f)
-  end
 end

@@ -1,5 +1,5 @@
 module Shards::ShardCreationForm
-  def render_shard_form(form : ShardForm)
+  def render(form : ShardForm)
     form_for Create do
       text_input form.repo_name, placeholder: "user/repo_name"
       errors_for form.repo_name

@@ -7,8 +7,4 @@ class Shards::NewPage < MainLayout
 
     render @shard_form
   end
-
-  private def render(f : ShardForm)
-    render_shard_form(f)
-  end
 end
