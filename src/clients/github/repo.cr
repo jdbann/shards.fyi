@@ -3,7 +3,7 @@ class Github::Repo
     name: String,
     full_name: String,
     html_url: String,
-    description: String,
+    description: String?,
     forks_count: Int32,
     stargazers_count: Int32,
     subscribers_count: Int32,

@@ -9,7 +9,7 @@ module Shards::ShardComponent
         div class: "shard-details-description" do
           para "Created #{shard.repo_created_at.to_s("%-d %B %Y")}"
           em do
-            para shard.description
+            para shard.description || ""
           end
         end
         div class: "shard-details-metadata" do

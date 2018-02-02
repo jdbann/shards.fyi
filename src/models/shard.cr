@@ -3,7 +3,7 @@ class Shard < BaseModel
     field name : String
     field full_name : String
     field html_url : String
-    field description : String
+    field description : String?
     field forks_count : Int32
     field stargazers_count : Int32
     field subscribers_count : Int32
