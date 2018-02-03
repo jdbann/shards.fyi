@@ -5,7 +5,7 @@ class Shards::IndexPage < MainLayout
   needs shards : ShardQuery
   needs shard_form : ShardForm
 
-  def inner
+  def content
     div class: "shard-intro" do
       h1 "Crystal Toolbox"
 

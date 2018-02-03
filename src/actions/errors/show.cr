@@ -1,9 +1,11 @@
 class Errors::Show < Lucky::ErrorAction
   def handle_error(error : JSON::ParseException)
     if json?
-      json({error: "There was a problem parsing the JSON. Please check that it is formed correctly"}, status: 400)
+      message = "There was a problem parsing the JSON." \
+                " Please check that it is formed correctly"
+      json Errors::ShowSerializer.new(message), status: 400
     else
-      head status: 400
+      render_error_page status: 500
     end
   end
 
@@ -11,10 +13,14 @@ class Errors::Show < Lucky::ErrorAction
     error.inspect_with_backtrace(STDERR)
 
     if json?
-      json({error: "An unexpected error occured"}, status: 500)
+      message = "An unexpected error occurred"
+      json Errors::ShowSerializer.new(message), status: 500
     else
-      response.status_code = 500
-      render_text "Something went wrong"
+      render_error_page status: 500
     end
+  end
+
+  private def render_error_page(status : Int32, title : String = "We're sorry. Something went wrong.")
+    render Errors::ShowPage, status: status, title: title
   end
 end

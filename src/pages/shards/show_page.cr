@@ -3,7 +3,7 @@ class Shards::ShowPage < MainLayout
 
   needs shard : Shard
 
-  def inner
+  def content
     render @shard
   end
 end

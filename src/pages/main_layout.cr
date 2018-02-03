@@ -8,7 +8,7 @@ abstract class MainLayout
   # Example:
   #   needs current_user : User
 
-  abstract def inner
+  abstract def content
 
   def render
     html_doctype
@@ -20,6 +20,7 @@ abstract class MainLayout
         css_link asset("css/app.css")
         js_link asset("js/app.js")
         csrf_meta_tags
+        responsive_meta_tag
       end
 
       body do
@@ -30,7 +31,7 @@ abstract class MainLayout
         end
         div class: "wrapper" do
           render_flash
-          inner
+          content
         end
       end
     end

@@ -1,5 +1,5 @@
 class Category < BaseModel
   table :categories do
-    field title : String
+    column title : String
   end
 end
