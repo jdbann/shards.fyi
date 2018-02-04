@@ -1,5 +1,7 @@
 # Crystal Toolbox
 
+[![Join the chat at https://gitter.im/shards-fyi/Lobby](https://badges.gitter.im/shards-fyi/Lobby.svg)](https://gitter.im/shards-fyi/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 An organized catalog of Crystal Shards written with [Lucky](https://luckyframework.org).
 
 ### Setting up the project
