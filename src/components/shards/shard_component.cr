@@ -18,13 +18,10 @@ module Shards::ShardComponent
               text "#{shard.stargazers_count} stars"
             end
             li do
-              text "#{shard.watchers_count} watchers"
-            end
-            li do
               text "#{shard.forks_count} forks"
             end
             li do
-              text "#{shard.subscribers_count} subscribers"
+              text "#{shard.subscribers_count} watchers"
             end
           end
         end

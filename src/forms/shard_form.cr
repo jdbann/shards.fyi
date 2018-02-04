@@ -16,7 +16,6 @@ class ShardForm < Shard::BaseForm
       forks_count.value = repo.forks_count
       stargazers_count.value = repo.stargazers_count
       subscribers_count.value = repo.subscribers_count
-      watchers_count.value = repo.watchers_count
       repo_created_at.value = repo.created_at
     end
   end
