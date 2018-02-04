@@ -7,7 +7,6 @@ class Github::Repo
     forks_count: Int32,
     stargazers_count: Int32,
     subscribers_count: Int32,
-    watchers_count: Int32,
     created_at: Time
   )
 

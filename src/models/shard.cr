@@ -6,13 +6,12 @@ class Shard < BaseModel
     column description : String?
     column forks_count : Int32
     column stargazers_count : Int32
-    column subscribers_count : Int32
-    column watchers_count : Int32
+    column subscribers_count : Int32 # GH api name for watchers
     column repo_created_at : Time
     belongs_to category : Category?
   end
 
   def popularity
-    forks_count + stargazers_count + subscribers_count + watchers_count
+    forks_count + stargazers_count + subscribers_count
   end
 end
