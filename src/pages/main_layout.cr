@@ -26,7 +26,7 @@ abstract class MainLayout
       body do
         header class: "header" do
           div class: "wrapper" do
-            link "Crystal Toolbox", to: Shards::Index, class: "header-brand"
+            link "shards.fyi", to: Shards::Index, class: "header-brand"
           end
         end
         div class: "wrapper" do
@@ -38,6 +38,6 @@ abstract class MainLayout
   end
 
   def page_title
-    "Welcome to Lucky"
+    "shards.fyi"
   end
 end
