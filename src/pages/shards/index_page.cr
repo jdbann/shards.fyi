@@ -7,7 +7,7 @@ class Shards::IndexPage < MainLayout
 
   def content
     div class: "shard-intro" do
-      h1 "Crystal Toolbox"
+      h1 "shards.fyi"
 
       para "A (soon-to-be) categorised collection of Crystal shards, sorted by
         interest on GitHub."

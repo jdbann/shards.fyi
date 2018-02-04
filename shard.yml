@@ -1,12 +1,12 @@
-name: crystal_toolbox
+name: shards_fyi
 version: 0.1.0
 
 authors:
   - John Bannister <jdbann@gmail.com>
 
 targets:
-  crystal_toolbox:
-    main: src/crystal_toolbox.cr
+  shards_fyi:
+    main: src/shards_fyi.cr
 
 crystal: 0.24.1
 

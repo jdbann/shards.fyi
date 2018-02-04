@@ -1,4 +1,4 @@
-database = "crystal_toolbox_#{Lucky::Env.name}"
+database = "shards_fyi_#{Lucky::Env.name}"
 
 LuckyRecord::Repo.configure do
   if Lucky::Env.production?

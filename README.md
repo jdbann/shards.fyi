@@ -1,4 +1,4 @@
-# Crystal Toolbox
+# shards.fyi
 
 An organized catalog of Crystal Shards written with [Lucky](https://luckyframework.org).
 
