@@ -2,6 +2,7 @@ class Shards::IndexPage < MainLayout
   include Shards::ShardComponent
   include Shards::ShardCreationForm
 
+  needs categories : CategoryQuery
   needs shards : ShardQuery
   needs shard_form : ShardForm
 
@@ -16,10 +17,16 @@ class Shards::IndexPage < MainLayout
       render @shard_form
     end
 
+    h2 "Categories"
+
+    @categories.each do |category|
+      link category.title, to: Categories::Show.with(id: category.id)
+    end
+
     h2 "All Shards"
 
     @shards.each do |shard|
-      render(shard)
+      render(shard, shard.category)
     end
   end
 end

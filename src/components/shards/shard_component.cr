@@ -1,5 +1,5 @@
 module Shards::ShardComponent
-  def render(shard : Shard)
+  def render(shard : Shard, category : Category?)
     div class: "shard-details" do
       h3 do
         span shard.popularity, class: "shard-popularity"
@@ -13,6 +13,11 @@ module Shards::ShardComponent
           end
         end
         div class: "shard-details-metadata" do
+          category.try do |category|
+            strong do
+              link category.title, to: Categories::Show.with(id: category.id)
+            end
+          end
           ul do
             li do
               text "#{shard.stargazers_count} stars"
