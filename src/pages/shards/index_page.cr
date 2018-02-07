@@ -19,8 +19,12 @@ class Shards::IndexPage < MainLayout
 
     h2 "Categories"
 
-    @categories.each do |category|
-      link category.title, to: Categories::Show.with(id: category.id)
+    ul class: "categories-list" do
+      @categories.each do |category|
+        li class: "categories-list-item" do
+          link category.title, to: Categories::Show.with(id: category.id)
+        end
+      end
     end
 
     h2 "All Shards"
