@@ -4,7 +4,7 @@ class Shards::ShowPage < MainLayout
   needs shard : Shard
 
   def content
-    render @shard
+    render @shard, @shard.category
   end
 
   def page_title

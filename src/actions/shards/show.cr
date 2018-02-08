@@ -4,6 +4,6 @@ class Shards::Show < BrowserAction
   end
 
   private def shard
-    ShardQuery.new.find(id)
+    ShardQuery.new.preload_category.find(id)
   end
 end
